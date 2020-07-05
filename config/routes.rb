@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
   root 'homes#top' 
   get 'home/about' => 'homes#about'
+  get 'search' => 'searches#search'
 
   devise_for :users
 
