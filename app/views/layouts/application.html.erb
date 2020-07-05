@@ -46,7 +46,7 @@
             <div class="input-group nav navbar-nav navbar-right">
               <%= text_field_tag (:word),'', class: "form-control", placeholder: "ユーザー名か本のタイトルで検索できます" %>
                 <span class="input-group-btn">
-                  <%= select_tag 'range' ,options_for_select([['--選択してください--', ''], ['User', '1'], ['Book', '2']]), class: "btn btn-default dropdown-toggle" %>
+                  <%= select_tag 'range' ,options_for_select([['--選択してください--', '0'], ['User', '1'], ['Book', '2']]), class: "btn btn-default dropdown-toggle" %>
                   <%= select_tag 'search', options_for_select([["前方一致","forward_match"], ["後方一致","backward_match"], ["完全一致","perfect_match"], ["部分一致","partial_match"]]), class: "btn btn-default dropdown-toggle" %>
                   <%= submit_tag "検索", :name => nil, class: "btn btn-primary" %>
                 </span>
