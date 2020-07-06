@@ -29,12 +29,12 @@
 					<% end %>
 					</td>
 					<td>
-						<a href="<%= following_user_path(user) %>">
+						<a href="<%= user_follows_path(user) %>">
 							<%= user.followings.count %>
 						</a>フォロー
 					</td>
 					<td>
-						<a href="<%= followers_user_path(user) %>">
+						<a href="<%= user_followers_path(user) %>">
 							<%= user.followers.count %>
 						</a>フォロワー
 					</td>

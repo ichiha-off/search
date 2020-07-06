@@ -12,7 +12,7 @@
 		<tr>
 			<th>Follow</th>
 			<th>
-				<a href="<%= following_user_path(user) %>">
+				<a href="<%= user_follows_path(user) %>">
 					<%= user.followings.count %>
 				</a>
 			</th>
@@ -20,7 +20,7 @@
 		<tr>
 			<th>Follower</th>
 			<th>
-				<a href="<%= followers_user_path(user) %>">
+				<a href="<%= user_followers_path(user) %>">
 					<%= user.followers.count %>
 				</a>
 			</th>

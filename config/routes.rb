@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users,only: [:show,:index,:edit,:update] do
-    member do
-      get :following, :followers
-     end
+    get 'follows' => 'relationships#follower', as: 'follows'
+    get 'followers' => 'relationships#followed', as: 'followers'
   end
   
   resources :books do
@@ -20,5 +19,6 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: [:create, :destroy]
+
 
 end

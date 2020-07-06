@@ -1,5 +1,7 @@
 class RelationshipsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def create
     @user = User.find(params[:follow_id])
     following = current_user.follow(@user)
@@ -23,5 +25,17 @@ class RelationshipsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+
+  def follower
+		@user  = User.find(params[:user_id])
+		@users = @user.followings
+		render 'show_follow'
+	end
+
+	def followed
+		@user  = User.find(params[:user_id])
+		@users = @user.followers
+		render 'show_follower'
+	end
 
 end
